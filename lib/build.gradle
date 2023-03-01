@@ -4,9 +4,9 @@ plugins {
 
 apply plugin: 'com.android.library'
 apply plugin: 'de.undercouch.download'
-//apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven-publish'
 
-group = 'com.github.sevar83'
+group = 'com.github.dalgarins'
 
 import de.undercouch.gradle.tasks.download.Download
 import org.gradle.internal.os.OperatingSystem;
@@ -122,3 +122,16 @@ task ndkClean(type: Exec, description: 'Clean NDK Binaries') {
 }
 
 clean.dependsOn 'ndkClean'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.dalgarins'
+                artifactId = 'android-spatialite'
+                version = '2.1.0'
+            }
+        }
+    }
+}
