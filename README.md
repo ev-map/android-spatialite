@@ -1,6 +1,8 @@
-[![Release](https://jitpack.io/v/com.github.sevar83/android-spatialite.svg)](https://jitpack.io/v/com.github.sevar83/android-spatialite.svg)
+[![Release](https://jitpack.io/v/com.github.dalgarins/android-spatialite.svg)](https://jitpack.io/v/com.github.dalgarins/android-spatialite.svg)
 
 # android-spatialite 
+
+this is a fork from [android-spatialite](https://github.com/sevar83/android-spatialite).
 
 ## WHAT IS THIS?
 - The [Spatialite](https://www.gaia-gis.it/gaia-sins/) database ported for *Android*
@@ -28,7 +30,7 @@ allprojects {
 
 2) Add the following to your module's `build.gradle`:
 ```
-implementation 'com.github.sevar83:android-spatialite:<LATEST_VERSION>'
+implementation 'com.github.dalgarins:android-spatialite:<LATEST_VERSION>'
 ```
 
 ## EXAMPLE CODE
@@ -82,6 +84,7 @@ android {
 - iconv 1.13
 - xml2 2.9.2
 - freexl 1.0.2
+- lwgeom 2.2.0
 
 ## REQUIREMENTS
 Min SDK 16
@@ -93,6 +96,9 @@ Min SDK 16
 3. Replace all occasions of `import org.spatialite.database.SQLite***Exception;` with `import android.database.sqlite.SQLite***Exception;`
 
 ## CHANGES
+
+### 2.1.0-alpha
+- Added support for lwgeom functions
 
 ### 2.0.1
 - Migrated to AndroidX
@@ -123,7 +129,7 @@ The main ideas used here were borrowed from:
 
 If you like this library, please consider...
 
-<a href="https://www.buymeacoffee.com/5Gds924" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+<a href="https://www.buymeacoffee.com/dalgarins" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 ## KNOWN PROJECTS USING THIS LIBRARY
 
