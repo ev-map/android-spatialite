@@ -86,7 +86,7 @@ splite_lwgeom_version (void)
 {
     return splitelwgeomversion;
 }
-
+/*
 static void
 lwgaia_noticereporter (const char *fmt, va_list ap)
 {
@@ -99,8 +99,23 @@ lwgaia_noticereporter (const char *fmt, va_list ap)
     spatialite_e ("LWGEOM notice: %s\n", msg);
     gaiaSetLwGeomWarningMsg (msg);
     free (msg);
+}*/
+
+static void
+lwgaia_noticereporter (const char *fmt, va_list ap)
+{
+    char *msg = sqlite3_vmprintf (fmt, ap);
+    if (msg == NULL)
+      {
+	  va_end (ap);
+	  return;
+      }
+    spatialite_e ("LWGEOM notice: %s\n", msg);
+    gaiaSetLwGeomWarningMsg (msg);
+    sqlite3_free (msg);
 }
 
+/*
 static void
 lwgaia_errorreporter (const char *fmt, va_list ap)
 {
@@ -113,6 +128,19 @@ lwgaia_errorreporter (const char *fmt, va_list ap)
     spatialite_e ("LWGEOM error: %s\n", msg);
     gaiaSetLwGeomErrorMsg (msg);
     free (msg);
+}*/
+static void
+lwgaia_errorreporter (const char *fmt, va_list ap)
+{
+    char *msg = sqlite3_vmprintf (fmt, ap);
+    if (msg == NULL)
+      {
+	  va_end (ap);
+	  return;
+      }
+    spatialite_e ("LWGEOM error: %s\n", msg);
+    gaiaSetLwGeomErrorMsg (msg);
+    sqlite3_free (msg);
 }
 
 #ifndef POSTGIS_2_1

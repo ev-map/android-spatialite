@@ -152,6 +152,7 @@ LOCAL_SRC_FILES := \
 # 	$(SPATIALITE_PATH)/src/gaiageo/Kml.c
 
 LOCAL_C_INCLUDES := \
+    $(NDK_MODULES_PATH)/liblwgeom/$(LWGEOM_PATH) \
     $(LOCAL_PATH)/$(SPATIALITE_PATH)/src/headers \
     $(LOCAL_PATH)/config
 
@@ -167,8 +168,9 @@ spatialite_flags := \
 	-DENABLE_GCP=1 \
     -DENABLE_GEOPACKAGE=1 \
     -DENABLE_LIBXML2=1 \
-    -DENABLE-LWGEOM=1 \
+    -DENABLE_LWGEOM=1 \
     -DGEOS_ADVANCED=1 \
+    -DPOSTGIS_2_1=1 \
     -DGEOS_TRUNK=1 \
     -DHAVE_ICONV_H=1 \
 
