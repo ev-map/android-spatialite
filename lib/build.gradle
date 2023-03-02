@@ -130,7 +130,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.dalgarins'
                 artifactId = 'android-spatialite'
-                version = '2.1.0'
+                version = '2.1.0-alpha'
             }
         }
     }
