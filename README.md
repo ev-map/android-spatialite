@@ -97,6 +97,9 @@ Min SDK 16
 
 ## CHANGES
 
+### 2.1.1-alpha
+- Enable SQLite DBSTAT virtual table
+
 ### 2.1.0-alpha
 - Added support for lwgeom functions
 
