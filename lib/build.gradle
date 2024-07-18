@@ -39,6 +39,7 @@ android {
     }
     // ndk gradle support is still very bad so it's built with the regular ndk-build
     sourceSets.main.jni.srcDirs = ['src/main/none']
+    ndkVersion = "21.1.6352462"
 }
 
 dependencies {
