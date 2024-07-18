@@ -16,11 +16,11 @@ gradle.projectsEvaluated {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'proguard-rules.pro'
     }
@@ -130,7 +130,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.dalgarins'
                 artifactId = 'android-spatialite'
-                version = '2.1.0-alpha'
+                version = '2.1.2-alpha'
             }
         }
     }
