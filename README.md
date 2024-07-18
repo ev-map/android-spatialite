@@ -87,7 +87,7 @@ android {
 - lwgeom 2.2.0
 
 ## REQUIREMENTS
-Min SDK 16
+Min SDK 21
 
 ## MIGRATION TO 2.0+
 
@@ -97,7 +97,11 @@ Min SDK 16
 
 ## CHANGES
 
-### 2.1.1-alpha
+### 2.1.2-alpha (minSdkVersion 21)
+- Upgrade minSdkVersion to 21
+- Upgrade targetSdkVersion to 34
+
+### 2.1.1-alpha (minSdkVersion 16)
 - Enable SQLite DBSTAT virtual table
 
 ### 2.1.0-alpha
