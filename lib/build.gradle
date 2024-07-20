@@ -105,3 +105,13 @@ dependencies {
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
 }
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.dalgarins'
+            artifactId = 'android-spatialite'
+            version = '2.1.2-alpha'
+        }
+    }
+}
