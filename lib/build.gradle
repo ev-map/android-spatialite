@@ -3,7 +3,7 @@ import org.gradle.internal.os.OperatingSystem
 plugins {
     alias(libs.plugins.android.library)
     id("de.undercouch.download") version "5.6.0"
-    id("maven-publish")
+    id 'maven-publish'
 }
 
 group = 'com.github.dalgarins'
@@ -33,6 +33,12 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+        }
     }
 
     sourceSets.main.jni.srcDirs = ['src/main/none']
@@ -112,6 +118,10 @@ publishing {
             groupId = 'com.github.dalgarins'
             artifactId = 'android-spatialite'
             version = '2.1.2-alpha'
+
+            afterEvaluate {
+                from components.release
+            }
         }
     }
 }
