@@ -76,7 +76,7 @@ android {
 
 ### What libraries are packaged currently?
 
-- SQLite 3.15.1
+- SQLite 3.49.1
 - Spatialite 4.3.0a
 - GEOS 3.4.2
 - Proj4 4.8.0
