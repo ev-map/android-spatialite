@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.android.library)
     id("de.undercouch.download") version "5.6.0"
     id 'maven-publish'
+    id 'signing'
 }
 
 group = 'com.github.dalgarins'
@@ -40,6 +41,7 @@ android {
     publishing {
         singleVariant('release') {
             withSourcesJar()
+            withJavadocJar()
         }
     }
 
@@ -87,7 +89,32 @@ publishing {
             groupId = 'io.github.ev-map'
             artifactId = 'android-spatialite'
 
-            version = '2.1.2-alpha-SNAPSHOT'
+            version = '2.2.0-alpha'
+
+            pom {
+                name = "android-spatialite"
+                description = "The Spatialite database ported for Android"
+                url = "https://github.com/ev-map/android-spatialite"
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/ev-map/android-spatialite.git'
+                    developerConnection = 'scm:git:ssh://git@github.com/ev-map/android-spatialite.git'
+                    url = 'https://github.com/ev-map/android-spatialite'
+                }
+                developers {
+                    developer {
+                        name = 'Johan von Forstner'
+                        email = 'evmap@vonforst.net'
+                        organization = "EVMap"
+                        organizationUrl = "https://ev-map.app"
+                    }
+                }
+            }
 
             afterEvaluate {
                 from components.release
@@ -96,11 +123,11 @@ publishing {
     }
     repositories {
         maven {
-            url = "https://central.sonatype.com/repository/maven-snapshots/"
-            credentials {
-                username = System.getenv("MAVEN_USERNAME")
-                password = System.getenv("MAVEN_PASSWORD")
-            }
+            url = uri(layout.buildDirectory.dir("repos/releases"))
         }
     }
+}
+
+signing {
+    sign publishing.publications.release
 }
