@@ -89,7 +89,7 @@ publishing {
             groupId = 'io.github.ev-map'
             artifactId = 'android-spatialite'
 
-            version = '2.2.0-alpha'
+            version = '2.2.1-alpha'
 
             pom {
                 name = "android-spatialite"
