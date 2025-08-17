@@ -84,12 +84,22 @@ dependencies {
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = 'com.github.dalgarins'
+            groupId = 'io.github.ev-map'
             artifactId = 'android-spatialite'
-            version = '2.1.2-alpha'
+
+            version = '2.1.2-alpha-SNAPSHOT'
 
             afterEvaluate {
                 from components.release
+            }
+        }
+    }
+    repositories {
+        maven {
+            url = "https://central.sonatype.com/repository/maven-snapshots/"
+            credentials {
+                username = System.getenv("MAVEN_USERNAME")
+                password = System.getenv("MAVEN_PASSWORD")
             }
         }
     }
