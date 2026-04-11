@@ -82,7 +82,7 @@ android {
 - Proj4 4.8.0
 - lzma 5.2.1
 - iconv 1.13
-- xml2 2.13.6
+- xml2 2.15.2
 - freexl 1.0.2
 - lwgeom 2.2.0
 
